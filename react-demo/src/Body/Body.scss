@@ -1,0 +1,49 @@
+body{
+  background-color: blanchedalmond;
+  height: 1600px;
+  width: 1200px;
+}
+section {
+  
+  height: 40%;
+  width: 40%;
+  padding: 150px;
+  margin: auto;
+  background-color: rgb(240, 240, 240);
+  border: 1px gray solid;
+}
+
+#methodPrint{
+  display: flexbox;
+
+}
+.methodPlace {
+  font: 20px;
+  padding-left: 20px;
+  font-weight: bold;
+  display: inline-block;
+}
+
+form {
+  text-align: center;
+  padding: 15px;
+  
+}
+
+input[type='radio'] {
+  display:none;
+}
+
+
+label {
+  margin: 1rem;
+}
+
+label span {
+  border: 1px solid grey;
+  padding: 1rem;
+}
+
+input[type='radio']:checked + span {
+  background: silver;
+}
