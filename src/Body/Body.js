@@ -1,34 +1,35 @@
 import React from "react"
 import './Body.scss'
+
+
+// Form
 class Body extends React.Component {
+
   constructor(props) {
     super(props);
     this.state = {
-      formChange: {},
-      url: '',
-      method: ''
+  
     }
 
   }
 
   handleSubmit = (e) => {
     e.preventDefault()
-    this.setState({url: this.state.formChange.url })
-    this.setState({ method: this.state.formChange.method })
+    this.props.handler(this.state)
+    this.setState()
   }
 
   handleChange = (e) => {
-    let formName = e.target.name
+    let name = e.target.name
     let value = e.target.value
-    let formChange = {...this.state.formChange, [formName]: value}
-    this.setState({formChange})
+    this.setState({...this.state, [name]: value})
   }
   
 
   render() {
     
     return (
-      <body>
+      <div>
 
         <form onSubmit={this.handleSubmit}>
           <label>URL</label><input name="url" type="text" onChange={this.handleChange}></input>
@@ -42,7 +43,7 @@ class Body extends React.Component {
         <div className="methodPlace">{this.state.method}</div>
         <div className="methodPlace">{this.state.url}</div>
         </section>
-      </body>
+      </div>
     )
   }
 }
